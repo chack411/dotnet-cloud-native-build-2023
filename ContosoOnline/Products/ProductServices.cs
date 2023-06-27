@@ -11,11 +11,11 @@ public class FakeProductService(ILogger<FakeProductService> logger) : IProductSe
 {
     private List<Product> _fakeOrders = new()
     {
-        new () { Name = "Apple", Price = 0.99f, ItemsInStock = 25, ProductId = "01" },
-        new () { Name = "Banana", Price = 0.99f, ItemsInStock = 25, ProductId = "02" },
-        new () { Name = "Orange", Price = 0.99f, ItemsInStock = 25, ProductId = "03" },
-        new () { Name = "Pear", Price = 0.99f, ItemsInStock = 25, ProductId = "04" },
-        new () { Name = "Pineapple", Price = 0.99f, ItemsInStock = 25, ProductId = "05" }
+        new () { Name = "りんご", Price = 98, ItemsInStock = 25, ProductId = "01" },
+        new () { Name = "バナナ", Price = 120, ItemsInStock = 25, ProductId = "02" },
+        new () { Name = "オレンジ", Price = 82, ItemsInStock = 25, ProductId = "03" },
+        new () { Name = "梨", Price = 153, ItemsInStock = 25, ProductId = "04" },
+        new () { Name = "パイナップル", Price = 199, ItemsInStock = 25, ProductId = "05" }
     };
 
     public Task<Product[]?> GetProductsAsync()

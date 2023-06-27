@@ -7,16 +7,16 @@
 
 <PageTitle>Products</PageTitle>
 
-<MudText Typo="Typo.h3" GutterBottom="true">Contoso Online</MudText>
-<MudText Class="mb-8">Welcome to Contoso Online</MudText>
-<MudText Class="m-5">Below you will find all of the products currently in stock. Use the "Order" button below to add it to your cart, then click the "Submit Order" button to send the order to us to fulfill it.</MudText>
+<MudText Typo="Typo.h3" GutterBottom="true">Build 2023 オンライン ショップ</MudText>
+<MudText Class="mb-8">Welcome to Build 2023 Japan!</MudText>
+@* <MudText Class="m-5">Below you will find all of the products currently in stock. Use the "Order" button below to add it to your cart, then click the "Submit Order" button to send the order to us to fulfill it.</MudText> *@
 
 <MudTable Items="_products" Hover="true" Breakpoint="Breakpoint.Sm" LoadingProgressColor="Color.Info" T="Product">
     <HeaderContent>
-        <MudTh>Product</MudTh>
-        <MudTh>Price</MudTh>
-        <MudTh>In Stock?</MudTh>
-        <MudTh>Order</MudTh>
+        <MudTh>商品</MudTh>
+        <MudTh>価格</MudTh>
+        <MudTh>在庫</MudTh>
+        <MudTh>注文</MudTh>
     </HeaderContent>
     <RowTemplate>
         <MudTd>@context.Name</MudTd>
@@ -25,7 +25,7 @@
         <MudTd>
             @if(!_cart.Any(x => x.ProductId == context.ProductId))
             {
-                <MudButton Style="width: 200px;" Color="Color.Primary" Variant="Variant.Filled" OnClick="@(() => AddToCart(context))">Add to Cart</MudButton>
+                <MudButton Style="width: 200px;" Color="Color.Primary" Variant="Variant.Filled" OnClick="@(() => AddToCart(context))">カートに追加</MudButton>
             }
             else
             {
@@ -35,7 +35,7 @@
     </RowTemplate>
     <FooterContent>
         <MudTd>
-            <MudButton Color="Color.Primary" Variant="Variant.Filled" OnClick="@(() => SubmitOrder())">Submit Order</MudButton>
+            <MudButton Color="Color.Primary" Variant="Variant.Filled" OnClick="@(() => SubmitOrder())">購入</MudButton>
         </MudTd>
     </FooterContent>
 </MudTable>

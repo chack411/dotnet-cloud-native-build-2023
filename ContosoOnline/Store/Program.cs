@@ -20,7 +20,9 @@ builder.Services.AddHttpClient<OrderServiceClient>(c =>
 
     c.BaseAddress = new(url);
 })
-.AddStandardResilienceHandler();
+.AddStandardResilienceHandler(o => {
+    o.RetryOptions.RetryCount = 3;
+});
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
